@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 function scraping()
 {
-	require_once 'class.Httprequest.php';
+	require_once 'class.HttpRequest.php';
 	$http = new Httprequest();
 	if (isset($_POST['domain'])) {
 		$http->setServer($_POST['domain']);
