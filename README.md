@@ -7,42 +7,43 @@
 How to use
  1. Require class: `require_once 'class.HttpRequest.php';`
  2. Using: `$http = new Httprequest();`
- 3. Using: `$http->setServer($_POST['domain']);
-	if (isset($_POST['domain'])) { //it is a URL of page that you want to scrap
+ 3. Using: `$http->setServer($_POST['domain']);`
 
-		$http->setServer($_POST['domain']);
+	`if (isset($_POST['domain'])) { //it is a URL of page that you want to scrap`
 
-	}
+		`$http->setServer($_POST['domain']);`
 
-	$html = $http->send();
+	`}`
 
-	if (isset($html->error)) {
+	`$html = $http->send();`
 
-		echo json_encode($html); exit();
+	`if (isset($html->error)) {`
 
-	}
+		`echo json_encode($html); exit();`
 
-	$result = $html->contents;
+	`}`
 
-	if (isset($_POST['tag-element'])) { // it is a selector (img.thumbnail)
+	`$result = $html->contents;`
 
-		$response = array();
+	`if (isset($_POST['tag-element'])) { // it is a selector (img.thumbnail)`
 
-		$checkData = $result->find($_POST['tag-element']);
+		`$response = array();`
 
-		if (count($checkData)) {
+		`$checkData = $result->find($_POST['tag-element']);`
 
-			foreach ($checkData as $key => $check) {
+		`if (count($checkData)) {`
 
-				array_push($response, $check->outertext());
+			`foreach ($checkData as $key => $check) {`
 
-			}
+				`array_push($response, $check->outertext());`
 
-		}
+			`}`
 
-		echo json_encode($response); exit();  // Get your result -> by JSON or any format response
-		
-	}`
+		`}`
+
+		`echo json_encode($response); exit();  // Get your result -> by JSON or any format response`
+
+	`}`
 
 # Donations
 I highly appreciate any of your donations.
