@@ -11,7 +11,7 @@ How to use
 
 	`if (isset($_POST['domain'])) { //it is a URL of page that you want to scrap`
 
-		`$http->setServer($_POST['domain']);`
+		$http->setServer($_POST['domain']);
 
 	`}`
 
@@ -19,7 +19,7 @@ How to use
 
 	`if (isset($html->error)) {`
 
-		`echo json_encode($html); exit();`
+		echo json_encode($html); exit();
 
 	`}`
 
@@ -27,21 +27,21 @@ How to use
 
 	`if (isset($_POST['tag-element'])) { // it is a selector (img.thumbnail)`
 
-		`$response = array();`
+		$response = array();
 
-		`$checkData = $result->find($_POST['tag-element']);`
+		$checkData = $result->find($_POST['tag-element']);
 
-		`if (count($checkData)) {`
+		if (count($checkData)) {
 
-			`foreach ($checkData as $key => $check) {`
+			foreach ($checkData as $key => $check) {
 
-				`array_push($response, $check->outertext());`
+				array_push($response, $check->outertext());
 
-			`}`
+			}
 
-		`}`
+		}
 
-		`echo json_encode($response); exit();  // Get your result -> by JSON or any format response`
+		echo json_encode($response); exit();  // Get your result -> by JSON or any format response
 
 	`}`
 
