@@ -225,8 +225,17 @@ class Httprequest {
 
     public function send() {
 
-        $url = $this->server.'/'.$this->action;
+        if (!empty($this->action)) {
 
+            $url = $this->server.'/'.$this->action;
+
+        }
+        else {
+
+            $url = $this->server;
+
+        }
+        
         // use key 'http' even if you send the request to https://...
         $this->options = array(
             'http' => array(
